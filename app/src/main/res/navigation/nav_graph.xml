@@ -9,7 +9,11 @@
         android:id="@+id/homeFragment"
         android:name="org.story.umctest.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_albumFragment"
+            app:destination="@id/albumFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lockerFragment"
         android:name="org.story.umctest.lock.LockerFragment"
@@ -25,4 +29,15 @@
         android:name="org.story.umctest.look.LookFragment"
         android:label="fragment_look"
         tools:layout="@layout/fragment_look" />
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="org.story.umctest.home.AlbumFragment"
+        android:label="fragment_album"
+        tools:layout="@layout/fragment_album" >
+        <argument
+            android:name="album"
+            app:argType="org.story.data.Album"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>
